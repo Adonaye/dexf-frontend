@@ -9,10 +9,10 @@ class Login extends Component {
         };
     }
 
-    componentDidMount() {
+    componentWillMount() {
         var config = {
             params: {
-                callbackUrl: "http://127.0.0.1:3001/callback",
+                callbackUrl: "http://127.0.0.1:3001/twitter_callback",
             },
             headers: {
                 'Access-Control-Allow-Origin': '*'
