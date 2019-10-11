@@ -21,9 +21,7 @@ class Login extends Component {
         axios.get('http://127.0.0.1:3000/oauth_request', config).then(
             response => {
                 console.log(response);
-                let url = JSON.stringify(response.data);
-                url = url.substr(1, url.length-2); // 
-                this.setState({ loginUrl: url });
+                this.setState({ loginUrl: response.data.authorizeUrl });
             }
         );
         

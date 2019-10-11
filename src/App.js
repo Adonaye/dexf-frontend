@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Login from "./session-components/Login";
 import Home from "./home-components/Home";
+import Callback from "./session-components/Callback";
 import "./App.css";
 
 class App extends Component {
@@ -19,6 +20,7 @@ class App extends Component {
             <div className="App">
                 <Router>
                     <Route exact path="/" component={(this.state.isLogged) ? Home : Login} />
+                    <Route exact path="/twitter_callback" component={Callback} />
                 </Router>
             </div >
         );
