@@ -20,7 +20,7 @@ class App extends Component {
             <div className="App">
                 <Router>
                     <Route exact path="/" component={(this.state.isLogged) ? Home : Login} />
-                    <Route exact path="/twitter_callback" component={Callback} />
+                    <Route path="/twitter_callback" component={Callback} />
                 </Router>
             </div >
         );
