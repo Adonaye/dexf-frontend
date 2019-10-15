@@ -7,9 +7,7 @@ class Login extends Component {
         this.state = {
             loginUrl: "",
         };
-    }
 
-    componentWillMount() {
         var config = {
             params: {
                 callbackUrl: "http://127.0.0.1:3001/twitter_callback",
@@ -20,11 +18,9 @@ class Login extends Component {
         }
         axios.get('http://127.0.0.1:3000/oauth_request', config).then(
             response => {
-                console.log(response);
                 this.setState({ loginUrl: response.data.authorizeUrl });
             }
         );
-        
     }
 
     render() {
