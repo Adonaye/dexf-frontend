@@ -10,4 +10,14 @@ function connect(onSuccess, onError, onDone=()=>{}, tokens={}) {
     ).finally(() => onDone());
 }
 
-export default { connect };
+function disconnect(onSuccess, onError, onDone=()=>{}) {
+    let options = {
+        withCredentials: true
+    }
+    axios.post("http://127.0.0.1:3000/disconnect", {}, options).then(
+        response => onSuccess(response),
+        error => onError(error),
+    ).finally(() => onDone());
+}
+
+export default { connect, disconnect };

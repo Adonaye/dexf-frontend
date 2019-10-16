@@ -19,7 +19,7 @@ class Callback extends React.Component {
         SessionService.connect(
             response => this.props.setLogged(response.data),
             error => this.setState({ success: false, error: error }),
-            () => this.props.history.push('/home'),
+            () => this.props.history.push('/'),
             tokens
         );
     }
